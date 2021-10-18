@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "name": "Dental Service",
+        "description": "Our medical gives you the best dental service all over the world.",
+        "image": "https://github.com/ShimulAUST/healtcareImages/blob/main/1.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Cardiac Surgery",
+        "description": "Our medical gives you the best cardiologist from all over the world.",
+        "image": "https://github.com/ShimulAUST/healtcareImages/blob/main/2.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Hair Transplant",
+        "description": "Our medicare gives you the best hair transplant service all over the world and gives you a proper feedback.",
+        "image": "https://github.com/ShimulAUST/healtcareImages/blob/main/3.jpg"
+    },
+    {
+        "id": "4",
+        "name": "Bone Transplant",
+        "description": "Our medicare gives you the best bone transplant service all over the world and gives you a proper feedback.",
+        "image": "https://github.com/ShimulAUST/healtcareImages/blob/main/4.jpg"
+    },
+    {
+        "id": "5",
+        "name": "Leser Treatment",
+        "description": "Our medicare gives you the best laser treatment service all over the world and gives you a proper feedback.",
+        "image": "https://github.com/ShimulAUST/healtcareImages/blob/main/5.jpg"
+    },
+    {
+        "id": "6",
+        "name": "Medicine Facilities",
+        "description": "You can get any type of medicine from our very own farmacy.",
+        "image": "https://github.com/ShimulAUST/healtcareImages/blob/main/6.jpg"
+    }
+]

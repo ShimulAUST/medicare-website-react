@@ -21,13 +21,13 @@ const Login = () => {
             })
 
     }
-    const { signInUsingEmailAndPass, setError, error } = useAuth();
+    const { signInUsingEmailAndPass, error } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleRegistration = e => {
+    const handleLogin = e => {
         e.preventDefault();
-        signInUsingEmailAndPass(email, password)
+        signInUsingEmailAndPass(email, password);
         console.log(email, password);
 
 
@@ -44,7 +44,7 @@ const Login = () => {
             <section className="container p-5">
                 <section className="row justify-content-center">
                     <section className="col-12 col-sm-6 col-md-4">
-                        <form className="form-container" style={{ backgroundColor: "aquamarine" }} onSubmit={handleRegistration}>
+                        <form className="form-container" style={{ backgroundColor: "aquamarine" }} onSubmit={handleLogin}>
 
                             <div className="form-group">
                                 <h4 className="text-center font-weight-bold"> Sign In </h4>
@@ -56,6 +56,7 @@ const Login = () => {
                                 <input type="password" onBlur={handlePasswordChanged} className="form-control mb-5" name="password" id="password" placeholder="Enter your Password" />
 
                             </div>
+
                             <div className="text-danger mb-2">{error}</div>
                             <button type="submit" name="login" className="btn btn-success btn-block">Submit</button>
                         </form>
@@ -63,10 +64,8 @@ const Login = () => {
                     </section>
                 </section>
             </section>
-            <br />
-            <br />
-            <br />
-            <button onClick={handleGoogleLogin}>Login With Goolgle</button>
+
+            <button className="btn btn-warning" onClick={handleGoogleLogin}>Login With Goolgle</button>
         </div>
     );
 };

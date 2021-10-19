@@ -11,6 +11,8 @@ import Register from './components/Register/Register';
 import Footer from './components/Footer/Footer';
 import DetailService from './components/DetailService/DetailService';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Booking from './components/Booking/Booking';
+import Teams from './components/Teams/Teams';
 function App() {
   return (
     <div className="App">
@@ -24,6 +26,12 @@ function App() {
             <Route exact path="/home">
               <Home />
             </Route>
+            <PrivateRoute exact path="/booking">
+              <Booking />
+            </PrivateRoute>
+            <PrivateRoute exact path="/teams">
+              <Teams></Teams>
+            </PrivateRoute>
             <Route exact path="/login">
               <Login />
             </Route>

@@ -4,33 +4,30 @@ const Footer = () => {
     return (
         <div>
 
-            <footer class="bg-dark text-center text-white mt-5">
+            <footer className="bg-dark text-center text-white mt-5">
 
-                <div class="container p-4">
-                    <section class="">
+                <div className="container p-4">
+                    <section className="">
                         <form action="">
 
-                            <div class="row d-flex justify-content-center">
+                            <div className="row d-flex justify-content-center">
 
-                                <div class="col-auto">
-                                    <p class="pt-2">
+                                <div className="col-auto">
+                                    <p className="pt-2">
                                         <strong>Sign up for our newsletter</strong>
                                     </p>
                                 </div>
+                                <div className="col-md-5 col-12">
 
-
-
-                                <div class="col-md-5 col-12">
-
-                                    <div class="form-outline form-white mb-4">
-                                        <input type="email" id="form5Example21" class="form-control" placeholder="Enter your Email Address" />
+                                    <div className="form-outline form-white mb-4">
+                                        <input type="email" id="form5Example21" className="form-control" placeholder="Enter your Email Address" />
 
                                     </div>
                                 </div>
 
-                                <div class="col-auto">
+                                <div className="col-auto">
 
-                                    <button type="submit" class="btn btn-outline-light mb-4">
+                                    <button type="submit" className="btn btn-outline-light mb-4">
                                         Subscribe
                                     </button>
                                 </div>
@@ -40,58 +37,58 @@ const Footer = () => {
                         </form>
                     </section>
 
-                    <section class="mb-4">
+                    <section className="mb-4">
                         <p>
                             We provide world best medicare facilities.You can come to visit our medicare.
                         </p>
                     </section>
 
-                    <section class="">
+                    <section className="">
 
-                        <div class="row">
+                        <div className="row">
 
-                            <div class="col-lg-4 col-md-4 mb-4 mb-md-0">
+                            <div className="col-lg-4 col-md-4 mb-4 mb-md-0">
                                 This is worlds best medicare <br />
                                 Our address:<br />
                                 Uttara,Dhaka<br />
 
                             </div>
 
-                            <div class="col-lg-4 col-md-4 mb-4 mb-md-0">
-                                <h5 class="text-uppercase">Services</h5>
+                            <div className="col-lg-4 col-md-4 mb-4 mb-md-0">
+                                <h5 className="text-uppercase">Services</h5>
 
-                                <ul class="list-unstyled mb-0">
+                                <ul className="list-unstyled mb-0">
                                     <li>
-                                        <a href="#!" class="text-white">Medicare</a>
+                                        Medicare
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">Cardiac Treatment </a>
+                                        Cardiac Treatment
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">Dental Service</a>
+                                        Dental Service
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">Laser Treatment</a>
+                                        Laser Treatment
                                     </li>
                                 </ul>
                             </div>
 
 
-                            <div class="col-lg-4 col-md-4 mb-4 mb-md-0">
-                                <h5 class="text-uppercase">Useful Links</h5>
+                            <div className="col-lg-4 col-md-4 mb-4 mb-md-0">
+                                <h5 className="text-uppercase">Useful Links</h5>
 
-                                <ul class="list-unstyled mb-0">
+                                <ul className="list-unstyled mb-0">
                                     <li>
-                                        <a href="#!" class="text-white">About</a>
+                                        About
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">Contact Us</a>
+                                        Contact Us
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">Services</a>
+                                        Services
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">Login</a>
+                                        Login
                                     </li>
                                 </ul>
                             </div>
@@ -104,8 +101,8 @@ const Footer = () => {
 
 
 
-                <div class="text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-                    © 2020 Copyright:  <a class="text-white" href="https://shimulpaul.com/"> ShimulPaul</a>
+                <div className="text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                    © 2020 Copyright:  <a className="text-white" href="https://shimulpaul.com/"> ShimulPaul</a>
                 </div>
 
             </footer>

@@ -24,15 +24,6 @@ function App() {
             <Route exact path="/home">
               <Home />
             </Route>
-            <Route exact path="/services">
-
-            </Route>
-            <Route exact path="/about">
-
-            </Route>
-            <Route exact path="/contact">
-
-            </Route>
             <Route exact path="/login">
               <Login />
             </Route>

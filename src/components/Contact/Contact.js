@@ -4,7 +4,7 @@ import contact from '../../images/contact.jpg';
 const Contact = () => {
     return (
         <div>
-            <Container className="mt-5">
+            <Container className="mt-5" id="contact">
                 <h2>Contact Us</h2>
                 <p>
                     Please send your message below. We will get back to you at the earliest!

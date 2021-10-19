@@ -9,6 +9,8 @@ import NotFound from './components/NotFound/NotFound';
 import AuthProvider from './context/AuthProvider';
 import Register from './components/Register/Register';
 import Footer from './components/Footer/Footer';
+import DetailService from './components/DetailService/DetailService';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 function App() {
   return (
     <div className="App">
@@ -37,6 +39,9 @@ function App() {
             <Route exact path="/register">
               <Register />
             </Route>
+            <PrivateRoute path="/detailService/:serviceId">
+              <DetailService></DetailService>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>

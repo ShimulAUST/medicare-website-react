@@ -1,28 +1,33 @@
+import Button from '@restart/ui/esm/Button';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../hooks/useAuth';
-import './Header.css';
+//import './Header.css';
 const Header = () => {
     const { user, logOut } = useAuth();
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+
+            <Navbar bg="dark" variant="dark" sticky="top" collapseOnSelect expand="lg">
                 <Container>
                     <Navbar.Brand href="#home">Medicare</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link href="#features">Features</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
-                        </Nav>
-                        <Nav>
-                            <Nav.Link href="#deets">More deets</Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
-                                Dank memes
-                            </Nav.Link>
-                        </Nav>
+                    <Navbar.Toggle />
+                    <Navbar.Collapse className="justify-content-end">
+                        <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
+                        <Nav.Link as={HashLink} to="/home#services">Services</Nav.Link>
+                        <Nav.Link as={HashLink} to="/home#teams">Our Team</Nav.Link>
+                        <Nav.Link as={HashLink} to="/home#contact">Contact Us</Nav.Link>
+                        {user.email ?
+                            <Button onClick={logOut} variant="light">Log Out</Button> :
+                            <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                        }
+                        <Navbar.Text>
+                            Signed in as: <span> {user.displayName} </span>
+                        </Navbar.Text>
                     </Navbar.Collapse>
+
                 </Container>
             </Navbar>
             {/* <Navbar bg="dark" variant="dark">
@@ -34,7 +39,7 @@ const Header = () => {
                         <Link to="/about">About Us</Link>
                         <Link to="/contact">Contact Us</Link>
                         <Link to="/login">Login</Link>
-                        <span> {user.displayName} </span>
+                       
                         {user?.email && < button onClick={logOut}> Log Out</button>}
                     </Nav >
                 </Container>

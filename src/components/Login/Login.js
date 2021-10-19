@@ -8,8 +8,8 @@ const Login = () => {
     const { signInUsinGoogle } = useAuth();
     return (
         <div>
+            hello from login
             <button onClick={signInUsinGoogle}>Login With Goolgle</button>
-
         </div>
     );
 };

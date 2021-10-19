@@ -7,38 +7,41 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import AuthProvider from './context/AuthProvider';
+import Register from './components/Register/Register';
+import Footer from './components/Footer/Footer';
 function App() {
   return (
     <div className="App">
       <AuthProvider>
         <BrowserRouter>
+          <Header />
           <Switch>
-            <Header />
-            <Route path="/">
+            <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/home">
+            <Route exact path="/home">
               <Home />
             </Route>
-            <Route path="/services">
+            <Route exact path="/services">
 
             </Route>
-            <Route path="/about">
+            <Route exact path="/about">
 
             </Route>
-            <Route path="/contact">
+            <Route exact path="/contact">
 
             </Route>
-            <Route path="/login">
-              <Login></Login>
+            <Route exact path="/login">
+              <Login />
             </Route>
-            <Route path="/register">
-
+            <Route exact path="/register">
+              <Register />
             </Route>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer></Footer>
         </BrowserRouter>
       </AuthProvider>
     </div>

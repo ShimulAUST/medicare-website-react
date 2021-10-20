@@ -12,28 +12,10 @@ const useFirebase = () => {
 
     const googleProvider = new GoogleAuthProvider();
     const signUpUsingEmailAndPass = (email, pass) => {
-        createUserWithEmailAndPassword(auth, email, pass)
-            .then((userCredential) => {
-                // Signed in 
-                const user = userCredential.user;
-                setUser(user);
-                setError('');
-                // ...
-            })
+        return createUserWithEmailAndPassword(auth, email, pass);
     }
     const signInUsingEmailAndPass = (email, pass) => {
-        signInWithEmailAndPassword(auth, email, pass)
-            .then((userCredential) => {
-                // Signed in 
-                const user = userCredential.user;
-                setUser(user);
-                // ...
-            })
-            .catch((error) => {
-                const errorMessage = error.message;
-                setError(errorMessage);
-            });
-
+        return signInWithEmailAndPassword(auth, email, pass);
     }
     const signInUsinGoogle = () => {
         setIsLoading(true);

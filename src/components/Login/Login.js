@@ -7,7 +7,7 @@ import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
 
-    const { signInUsinGoogle, setIsLoading } = useAuth();
+    const { signInUsinGoogle, setIsLoading, setUser, setError } = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirectURL = location.state?.from || '/home';
@@ -27,11 +27,19 @@ const Login = () => {
 
     const handleLogin = e => {
         e.preventDefault();
-        signInUsingEmailAndPass(email, password);
+        signInUsingEmailAndPass(email, password)
+            .then((userCredential) => {
+                // Signed in 
+
+                history.push(redirectURL);
+
+                // ...
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                setError(errorMessage);
+            });
         console.log(email, password);
-
-
-
     }
     const handleEmailChanged = e => {
         setEmail(e.target.value);

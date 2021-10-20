@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
 import './Register.css';
 const Register = () => {
-    const { signUpUsingEmailAndPass, setError, error } = useAuth();
+    const { signUpUsingEmailAndPass, setError, error, setUser } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const location = useLocation();
+    const history = useHistory();
+    const redirectURL = location.state?.from || '/home';
 
     const handleRegistration = e => {
         e.preventDefault();
@@ -14,10 +18,12 @@ const Register = () => {
             return;
         }
         signUpUsingEmailAndPass(email, password)
+            .then((userCredential) => {
+                // Signed in 
+                history.push(redirectURL);
+                // ...
+            });
         console.log(email, password);
-
-
-
     }
     const handleEmailChanged = e => {
         setEmail(e.target.value);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardGroup, Container } from 'react-bootstrap';
+import { Card, CardGroup, Container, Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
@@ -10,27 +10,32 @@ const DetailService = () => {
         fetch('/fakeData.json')
             .then(res => res.json())
             .then(data => setService(data.filter(serv => (serv.id === serviceId))));
-    }, [service]);
+    }, [serviceId]);
     return (
         <div>
-            <Container className="mt-5">
-                <CardGroup className="h-100">
-                    <Card>
-                        <Card.Img variant="top" src={service[0].image} height="250px" />
-                        <Card.Body style={{ textAlign: 'center' }}>
-                            <Card.Title>{service[0].name}</Card.Title>
-                            <Card.Text>
-                                {service[0].description}
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer style={{ backgroundColor: "white" }}>
-                            <Link className="btn btn-warning form-control btn-block" to='/home'>Back To Home</Link>
-                        </Card.Footer>
-                    </Card>
+            {service.length > 0 ?
+                <Container className="mt-5">
+                    <CardGroup className="h-100">
+                        <Card>
+                            <Card.Img variant="top" src={service[0].image} height="250px" />
+                            <Card.Body style={{ textAlign: 'center' }}>
+                                <Card.Title>{service[0].name}</Card.Title>
+                                <Card.Text>
+                                    {service[0].description}
+                                </Card.Text>
+                            </Card.Body>
+                            <Card.Footer style={{ backgroundColor: "white" }}>
+                                <Link className="btn btn-warning form-control btn-block" to='/home'>Back To Home</Link>
+                            </Card.Footer>
+                        </Card>
 
 
-                </CardGroup>
-            </Container>
+                    </CardGroup>
+                </Container> : <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+
+            }
         </div>
     );
 };

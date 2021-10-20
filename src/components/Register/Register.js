@@ -4,7 +4,7 @@ import useAuth from '../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
 import './Register.css';
 const Register = () => {
-    const { signUpUsingEmailAndPass, setError, error, setUser } = useAuth();
+    const { signUpUsingEmailAndPass, setError, error } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const location = useLocation();
